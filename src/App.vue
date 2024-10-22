@@ -1,8 +1,9 @@
 <template>
 <div >
-  <!-- <navbar-page/> 
-  <br> -->
+  
   <div class="container">
+    <navbar-page/> 
+   
     <h1 class="title">Youtube Demo</h1>
     <search-bar @termChange="onTermChange"/>
     <div class="detailDiv">
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-//import NavbarPage from './components/NavbarPage.vue'
+import NavbarPage from './components/NavbarPage.vue'
 import SearchBar from './components/SearchBar.vue'
 import VideoList from './components/VideoList.vue';
 import VideoDetail from './components/VideoDetail.vue';
@@ -25,7 +26,7 @@ import axios from 'axios';
 export default {
   name: 'App',
   components: {
-   // NavbarPage,
+    NavbarPage,
     SearchBar,
     VideoList,
     VideoDetail
@@ -68,6 +69,7 @@ export default {
   max-width: 1200px;
   width: 100%;
   margin: 50px auto;
+  margin-top: 100px;
 }
 .title{
   text-align: center;
@@ -94,6 +96,21 @@ button{
 .detailDiv{
   display: flex;
 }
+/* Tarayıcı varsayılan stillerini sıfırlıyoruz */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
+/* Arka plan resmini ayarlıyoruz */
+#app {
+  min-height: 100%;
+  background-image: url('@/assets/ultra.jpg'); /* Resminizin doğru yolunu belirtin */
+  background-size: cover;       /* Resmi alanı kaplayacak şekilde ölçeklendirir */
+  background-repeat: no-repeat; /* Resmin tekrar etmesini engeller */
+  background-position: center;  /* Resmi ortalar */
+  position: relative;           /* Üstteki bileşenlerin doğru konumlandırılması için */
+}
 </style>
 

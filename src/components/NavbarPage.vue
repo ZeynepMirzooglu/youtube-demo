@@ -35,7 +35,7 @@
         </nav> -->
         <!-- <img src="https://images.unsplash.com/photo-1629812456605-4a044aa38fbc?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc3ODI1OTg&ixlib=rb-1.2.1&q=80" alt="">
           -->
-          <!-- <img src="../assets/ultra.jpg" alt=""> -->
+          <!-- <img class="imageBackground" src="../assets/ultra.jpg" alt=""> -->
       </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 * {
   box-sizing: border-box;
 }
@@ -71,12 +71,12 @@ nav {
   text-shadow: 0 0 5px rgba(0,0,0,0.5);
   color: white;
   font-size: 16px;
-  &.mask {
+  .mask {
     top: 150px;
     mask-image: linear-gradient(black 70%, transparent);
     -webkit-mask-image: linear-gradient(black 70%, transparent);
   }
-  &.mask-pattern {
+  .mask-pattern {
     top: 300px;
     mask-image: url("data:image/svg+xml, %3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12.21 10.57%27%3E%3Cpath fill=%27%23ffffff%27 d=%27M6.1 0h6.11L9.16 5.29 6.1 10.57 3.05 5.29 0 0h6.1z%27/%3E%3C/svg%3E"), linear-gradient(black calc(100% - 30px), transparent calc(100% - 30px));
     mask-size: auto 30px, 100% 100%;
@@ -154,5 +154,12 @@ img {
   width: 100%;
   min-height: 200vh;
   object-fit: cover;
+}
+.imageBackground{
+background-image: url('@/assets/ultra.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+min-height: 100vh;
 }
 </style>
